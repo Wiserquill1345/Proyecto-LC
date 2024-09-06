@@ -1,0 +1,32 @@
+.Welcome{
+    display: flex;
+    background-color: rgb(91, 41, 42);
+    padding: 20px; 
+}
+
+.navigator{
+    background-color: rgb(228, 141, 12);
+    padding: 12px;
+}
+
+.btn{
+    background-color: aliceblue;
+    padding: 7px 10px;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: rgb(91, 41, 42);
+    color: aliceblue;
+}
+
+.image-logo{
+    width: 100px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.texts{
+    align-self: center;
+    color: aliceblue;
+}
