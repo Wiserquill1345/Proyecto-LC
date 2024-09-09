@@ -1,36 +1,122 @@
-.Welcome{
+/* Globales */
+
+.Welcome {
     display: flex;
     background-color: rgb(91, 41, 42);
-    padding: 20px; 
+    padding: 20px;
 }
 
-.navigator{
+.navigator {
     background-color: rgb(228, 141, 12);
     padding: 12px;
 }
 
-.btn{
+.btn {
     background-color: aliceblue;
     padding: 7px 10px;
     border-radius: 10px;
 }
 
-.btn:hover{
-    background-color: rgb(91, 41, 42);
-    color: aliceblue;
+.btn:hover {
+    background-color: rgb(91, 41, 42) !important;
+    color: aliceblue !important;
 }
 
-.image-logo{
+.image-logo {
     width: 100px;
     height: 70px;
     margin-right: 10px;
 }
 
-.texts{
+.texts {
     align-self: center;
+    padding-left: 5%;
     color: aliceblue;
 }
 
-.Pie_Pagina{
+body {
+    background-color: #E9EFF6;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 20%;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2%;
     background-color: rgb(228, 141, 12);
 }
+
+/* Estilos para el documento login */
+
+.section-login {
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    height: 87%;
+}
+
+.form-container {
+    width: 60%;
+}
+
+.title-login {
+    background-color: #5B292A;
+    padding: 4%;
+    margin: -20% -19.7% 0 -19.5%;
+    border-radius: 9px;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+
+
+/* ---------- Login-Formulario ------------ */
+.formulario {
+    margin: -5rem auto -2rem auto;
+    width: 100%;
+    padding-top: 5rem;
+
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.form__label{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.label__email{
+    padding-right: 10%;
+}
+.input__pass{
+    margin-right: -6.5%;
+}
+.input__showpass{
+    width: 15%;
+    
+}
+
+.a-login {
+    color: #E48D0C;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.btn-login_submit {
+    background-color: #D59F9F !important;
+}
+
