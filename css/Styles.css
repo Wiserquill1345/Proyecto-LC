@@ -120,3 +120,8 @@ footer {
     background-color: #D59F9F !important;
 }
 
+/* @media(max-width:768px){
+    body{
+        display: grid;
+    }
+} */
