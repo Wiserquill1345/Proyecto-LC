@@ -120,6 +120,12 @@ footer {
     background-color: #D59F9F !important;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 /* @media(max-width:768px){
     body{
         display: grid;
