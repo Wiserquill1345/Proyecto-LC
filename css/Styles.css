@@ -33,6 +33,9 @@
     padding-left: 5%;
     color: aliceblue;
 }
+.t-right {
+    padding-left: 50%;
+}
 
 body {
     background-color: #E9EFF6;
@@ -129,6 +132,13 @@ footer {
     background-color: #D59F9F !important;
 }
 
+.error {
+    background-color: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width:95%;
+    border-radius: 5px;
+}
 /* @media(max-width:768px){
     body{
         display: grid;

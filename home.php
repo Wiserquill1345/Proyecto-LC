@@ -1,10 +1,15 @@
+<?php
+session_start();
+if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -16,6 +21,10 @@
         </div>
         <div class="texts">
             <h1>Portal personal</h1>
+        </div>
+        <div class="texts t-right">
+            <h1>Bienvenido, <?php echo $_SESSION['name']; ?></h1>
+            <a href="logout.php">Logout</a>
         </div>
     </div>
 
@@ -33,3 +42,9 @@
 </footer>
 
 </html>
+<?php
+}else{
+    header("Location: index.php");
+    exit();
+}
+?>
