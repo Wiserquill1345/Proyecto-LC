@@ -139,8 +139,12 @@ footer {
     width:95%;
     border-radius: 5px;
 }
-/* @media(max-width:768px){
-    body{
-        display: grid;
+
+/* Estilos para el documento formularios estudiantes */
+@media(max-width:768px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
-} */
+}
