@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -24,20 +24,24 @@
     <!-- Formulario del login-->
     <section class="section-login">
         <div class="container py-5 h-100">
-            <div class="row d-flex pt-5 justify-content-center align-items-center h-100">
+            <div class="row d-flex justify-content-center align-items-center div-form-login">
                 <div class="card shadow-2-strong vh-80 p-5 form-container" style="border-radius: 1rem;">
+                    
                     <div class="card-body pt-5 pl-5 pr-5 text-center">
 
                         <div class="mb-5 title-login">ACCESO</div>
-                        <form class="formulario">
+                        <?php if(isset($_GET['error'])) { ?>
+                                    <p class="error"><?php echo $_GET['error']; ?></p>
+                                <?php } ?>
+                        <form class="formulario" action="login.php" method="post">
                             <div class="campo">
                                 <label class="form__label d-flex align-items-center label__email" for="email">Email:</label>
-                                <input class="form-control form-control-lg" type="email" placeholder="Tu Email" id="email">
+                                <input class="form-control form-control-lg" type="email" placeholder="Tu Email" name="email">
                             </div>
                             <div class="campo">
                                 <label class="form__label d-flex align-items-center" for="password">Contraseña:</label>
-                                <input class="form-control form-control-lg input__pass" type="password" placeholder="*******" id="password">
-                                <input type="button" class="input__showpass" onclick="myFunction()">
+                                <input class="form-control form-control-lg input__pass" type="password" placeholder="*******" id="password" name="password">
+                                <button type="button" class="input__showpass" id="togglePassword" onclick="myFunction()"><img src="img/ojo-on.png" style="width:100%;"/></button>
                             </div>
                             <div class="campo d-flex justify-content-center">
                                 <a class="a-login" href="signup.html"> Olvidé mi contraseña </a>
