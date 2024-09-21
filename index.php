@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/Styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -43,10 +43,9 @@
                                 <input class="form-control form-control-lg input__pass" type="password" placeholder="*******" id="password" name="password">
                                 <button type="button" class="input__showpass" id="togglePassword" onclick="myFunction()"><img src="img/ojo-on.png" style="width:100%;"/></button>
                             </div>
-                            <div class="campo d-flex justify-content-center">
+                            <hr>
+                            <div class="campo d-flex align-items-center justify-content-between">
                                 <a class="a-login" href="signup.html"> Olvidé mi contraseña </a>
-                            </div>
-                            <div class="campo">
                                 <input type="submit" value="Enviar" class="btn btn-lg btn-block btn-login_submit">
                             </div>
                         </form>
