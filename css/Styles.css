@@ -33,6 +33,9 @@
     padding-left: 5%;
     color: aliceblue;
 }
+.t-right {
+    padding-left: 50%;
+}
 
 body {
     background-color: #E9EFF6;
@@ -61,6 +64,10 @@ footer {
     position: absolute;
     width: 100%;
     height: 87%;
+}
+
+.div-form-login{
+    height:90%
 }
 
 .form-container {
@@ -103,10 +110,15 @@ footer {
 }
 .input__pass{
     margin-right: -6.5%;
+    border-right: white !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 .input__showpass{
     width: 15%;
-    
+    border: 1px solid #ced4da;
+    background-color: white;
+    gap: 10px;
 }
 
 .a-login {
@@ -119,4 +131,3 @@ footer {
 .btn-login_submit {
     background-color: #D59F9F !important;
 }
-
