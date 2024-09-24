@@ -8,7 +8,7 @@
 
 .navigator {
     background-color: rgb(228, 141, 12);
-    padding: 12px;
+    padding: 20px;
 }
 
 .btn {
@@ -72,13 +72,13 @@ footer {
 
 .form-container {
     width: 60%;
+    border-radius: 0 !important;
 }
 
 .title-login {
-    background-color: #5B292A;
+    background-color: #474040;
     padding: 4%;
-    margin: -20% -19.7% 0 -19.5%;
-    border-radius: 9px;
+    margin: -19% -19% 0 -19%;
     color: aliceblue;
     font-weight: 500;
     font-size: 22px;
@@ -108,6 +108,14 @@ footer {
 .label__email{
     padding-right: 10%;
 }
+.form-control{
+    border: 1px solid orange !important; 
+    box-shadow: 0 1px 6px 0 rgba(220, 117, 7, 0.5) !important;
+}
+.form-control:focus{
+    border: 1px solid black !important; 
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5) !important;
+}
 .input__pass{
     margin-right: -6.5%;
     border-right: white !important;
@@ -119,15 +127,39 @@ footer {
     border: 1px solid #ced4da;
     background-color: white;
     gap: 10px;
+    border: 1px solid orange; 
+    box-shadow: 0 1px 6px 0 rgba(220, 117, 7, 0.5);
 }
 
 .a-login {
     color: #E48D0C;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     text-decoration: underline;
 }
 
 .btn-login_submit {
-    background-color: #D59F9F !important;
+    background-color: rgb(91, 41, 42) !important;
+    color: white !important;
+    width: 20% !important;
+}
+.btn-login_submit:hover {
+    background-color: rgb(255, 140, 0) !important;
+}
+
+.error {
+    background-color: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width:100%;
+    border-radius: 5px;
+}
+
+/* Estilos para el documento formularios estudiantes */
+@media(max-width:768px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
