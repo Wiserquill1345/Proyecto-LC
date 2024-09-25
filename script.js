@@ -1,3 +1,4 @@
+//funcion y variables para ver o no ver la contraseña en el login
 const icon = document.getElementById('togglePassword');
 let password = document.getElementById('password');
 

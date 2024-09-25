@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -30,25 +30,36 @@
                     <div class="card-body pt-5 pl-5 pr-5 text-center">
 
                         <div class="mb-5 title-login">ACCESO</div>
+                        <!-- Determina si anteriormente se intento hacer un inicio de sesion que termino siendo fallido y la razon del
+                        por que -->
                         <?php if(isset($_GET['error'])) { ?>
                                     <p class="error"><?php echo $_GET['error']; ?></p>
                                 <?php } ?>
+                        <!-- Inicio del formulario la cual manda los datos registrados al documento login.php en donde se realiza la
+                             verificacion de los usuarios-->
                         <form class="formulario" action="login.php" method="post">
+                            <!-- label e input del email !-->
                             <div class="campo">
                                 <label class="form__label d-flex align-items-center label__email" for="email">Email:</label>
                                 <input class="form-control form-control-lg" type="email" placeholder="Tu Email" name="email">
                             </div>
+                            <!-- label e input de la contraseña !-->
                             <div class="campo">
                                 <label class="form__label d-flex align-items-center" for="password">Contraseña:</label>
-                                <input class="form-control form-control-lg input__pass" type="password" placeholder="*******" id="password" name="password">
-                                <button type="button" class="input__showpass" id="togglePassword" onclick="myFunction()"><img src="img/ojo-on.png" style="width:100%;"/></button>
+                                <input class="form-control form-control-lg input__pass" type="password" placeholder="***********" id="password" name="password">
+                                <!-- boton que permite al usuario ver o no ver la contraseña -->
+                                <button type="button" class="input__showpass" id="togglePassword"><img src="img/ojo-on.png" style="width:100%;"/></button>
                             </div>
+                            <!-- division -->
                             <hr>
                             <div class="campo d-flex align-items-center justify-content-between">
+                                <!--link para mandar al usuario a recuperar su contraseña-->
                                 <a class="a-login" href="signup.html"> Olvidé mi contraseña </a>
-                                <input type="submit" value="Enviar" class="btn btn-lg btn-block btn-login_submit">
+                                <!--boton para verificar si el correo o contraseña coinciden con la de algun usuario-->
+                                <input type="submit" value="Entrar" class="btn btn-lg btn-block btn-login_submit">
                             </div>
                         </form>
+                        <!-- Fin del formulario -->
                     </div>
                 </div>
             </div>
