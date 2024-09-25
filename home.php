@@ -9,13 +9,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
-=======
-    <title>Home</title>
-    <link rel="stylesheet" href="css/Styles.css">
->>>>>>> 1c34bf4c5e755655167930d676e16a8e18484f1c
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
