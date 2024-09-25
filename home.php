@@ -25,7 +25,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </div>
         <div class="texts t-right">
             <!-- Muestra el nombre del usuario -->
-            <h1>Bienvenido, <?php echo $_SESSION['name']; ?></h1>}
+            <h1>Bienvenido, <?php echo $_SESSION['name']; ?></h1>
             <!-- Cierra la sesion del usuario -->
             <a href="logout.php">Logout</a>
         </div>
