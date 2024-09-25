@@ -1,3 +1,4 @@
+<!-- Eliminamos la sesion del usuario y mandamos al usuario al inicio de sesion -->
 <?php
 session_start();
 
