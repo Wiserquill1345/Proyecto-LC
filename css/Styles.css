@@ -2,8 +2,16 @@
 
 .Welcome {
     display: flex;
+    align-items: center;
     background-color: rgb(91, 41, 42);
-    padding: 20px;
+    margin: 2px;
+    padding: 10px;
+}
+
+.Welcome img{
+    width: 60px;
+    height: 60px;
+    margin-right: -10px;
 }
 
 .navigator {
@@ -12,20 +20,17 @@
 }
 
 .btn {
+    display: inline-block;
     background-color: aliceblue;
-    padding: 7px 10px;
-    border-radius: 10px;
+    padding: 25px 35px;
+    border: 0px;
+    margin: -6px 0px;
+    
 }
 
 .btn:hover {
     background-color: rgb(91, 41, 42) !important;
     color: aliceblue !important;
-}
-
-.image-logo {
-    width: 100px;
-    height: 70px;
-    margin-right: 10px;
 }
 
 .texts {
