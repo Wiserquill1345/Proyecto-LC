@@ -26,6 +26,10 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         exit();
     //si los inputs estan llenados, entonces procede a la verificacion de usuarios
     }else{
+        
+        //Se aplica hash a la contraseña
+        $pass = md5($pass);
+
         //realizamos una solicitud a la base de datos en la tabla de usuarios
         $sql = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
         $result=mysqli_query($conn, $sql);
@@ -37,7 +41,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             //verificamos si los datos se guardaron de forma correcta
             if ($row['email'] === $email && $row['password'] === $pass) {
                 //se guardan en las variables de sesion sus respectivos datos del usuario
-                $_SESSION['exp'] = $row['expediente'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['name'] = $row['nombre'];
                 $_SESSION['id'] = $row['id'];

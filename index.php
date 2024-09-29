@@ -40,12 +40,10 @@
                         <form class="formulario" action="login.php" method="post">
                             <!-- label e input del email !-->
                             <div class="campo">
-                                <label class="form__label d-flex align-items-center label__email" for="email">Email:</label>
                                 <input class="form-control form-control-lg" type="email" placeholder="Tu Email" name="email">
                             </div>
                             <!-- label e input de la contraseña !-->
                             <div class="campo">
-                                <label class="form__label d-flex align-items-center" for="password">Contraseña:</label>
                                 <input class="form-control form-control-lg input__pass" type="password" placeholder="***********" id="password" name="password">
                                 <!-- boton que permite al usuario ver o no ver la contraseña -->
                                 <button type="button" class="input__showpass" id="togglePassword"><img src="img/ojo-on.png" style="width:100%;"/></button>

@@ -3,8 +3,7 @@
 .Welcome {
     display: flex;
     align-items: center;
-    background-color: rgb(91, 41, 42);
-    margin: 2px;
+    background-color:rgb(91, 41, 42) ;
     padding: 10px;
 }
 
@@ -128,7 +127,7 @@ footer {
     border-bottom-right-radius: 0 !important;
 }
 .input__showpass{
-    width: 15%;
+    width: 12%;
     border: 1px solid #ced4da;
     background-color: white;
     gap: 10px;
@@ -167,4 +166,21 @@ footer {
         align-items: center;
         justify-content: flex-end;
     }
+}
+
+/* Estilos para el documento register */
+.container-register{
+    height: 65vh;
+    display: flex;
+    align-items: flex-end;
+}
+.div-btn_register{
+    height: 3rem;
+}
+.exito {
+    background-color: #D4EDDA;
+    color: #40754C;
+    padding: 10px;
+    width:100%;
+    border-radius: 5px;
 }

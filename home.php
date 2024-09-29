@@ -25,7 +25,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </div>
         <div class="texts t-right">
             <!-- Muestra el nombre del usuario -->
-            <h1>Bienvenido, <?php echo $_SESSION['name']; ?></h1>
+            <h1>Bienvenid@, <?php echo $_SESSION['name']; ?></h1>
             <!-- Cierra la sesion del usuario -->
             <a href="logout.php">Logout</a>
         </div>
@@ -36,8 +36,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         <button class="btn btn-light">Inventario</button>
         <button class="btn btn-light">Pedidos</button>
         <button class="btn btn-light">Entregas</button>
+        <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
+        <?php
+            if($_SESSION['id']==5) {
+        ?>
+        <button class="btn btn-light"  onclick="window.location.href='register.php'" >Registro</button>
+        <?php
+        }
+        ?>
     </nav>
-
     <script src="script.js"></script>
 </body>
 
