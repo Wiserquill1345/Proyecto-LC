@@ -31,11 +31,17 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </div>
     </div>
     <!-- Botones -->
-    <nav class="navigator">
-        <button class="btn btn-light">Inicio</button>
-        <button class="btn btn-light">Inventario</button>
-        <button class="btn btn-light">Pedidos</button>
-        <button class="btn btn-light">Entregas</button>
+    <nav>
+        <ul class="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="register.php">Add User</a></li>
+        </ul>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Search">
+                <button type="submit" class="btn btn-light">Search</button>
+            </form>
+        </div>
     </nav>
 
     <script src="script.js"></script>
