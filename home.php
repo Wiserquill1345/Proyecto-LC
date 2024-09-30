@@ -40,7 +40,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         <?php
             if($_SESSION['id']==5) {
         ?>
-        <button class="btn btn-light"  onclick="window.location.href='register.php'" >Registro</button>
+        <button class="btn btn-light"  onclick="window.location.href='users.php'" >Control de usuarios</button>
         <?php
         }
         ?>
