@@ -21,27 +21,9 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
             <div class="texts">
                 <h1>Registro de estudiante</h1>
             </div>
-            
         </div>
-        <!-- Botones -->
-    <nav class="navigator">
-        <button class="btn btn-light" onclick="window.location.href='home.php'">Inicio</button>
-        <button class="btn btn-light">Inventario</button>
-        <button class="btn btn-light">Pedidos</button>
-        <button class="btn btn-light">Entregas</button>
-        <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
-        <?php
-            if($_SESSION['id']==5) {
-        ?>
-        <button class="btn btn-light"  onclick="window.location.href='users.php'" >Control de usuarios</button>
-        <?php
-        }
-        ?>
-    </nav>
-        
 
         <div class="container">
-
             <div class="row d-flex justify-content-center container-register">
                 <div class="col-md-4 ">
                     <div class="card ">

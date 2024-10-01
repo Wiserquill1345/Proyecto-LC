@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -13,13 +13,13 @@
 <body>
     <div class="Welcome">
         <div>
-            <img src="img/logo_welcome.png" alt="logo ues" class="image-logo">
+            <img src="img/logo_setues.png" alt="logo ues" class="image-logo">
         </div>
         <div class="texts">
             <h1>Inicio de sesion</h1>
         </div>
     </div>
-    <nav class="navigator"></nav>
+    <nav></nav>
 
     <!-- Formulario del login-->
     <section class="section-login">

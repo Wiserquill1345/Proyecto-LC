@@ -10,7 +10,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -18,7 +18,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     
     <div class="Welcome">
         <div>
-            <img src="img/logo_welcome.png" alt="logo ues">
+            <img src="img/Logo_setues.png" alt="logo ues" class="logo">
         </div>
         <div class="texts">
             <h1>Portal personal</h1>
@@ -30,19 +30,31 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
             <a href="logout.php">Logout</a>
         </div>
     </div>
-    <!-- Botones -->
+    <!-- menu para mostrar los elementos que tendra el menu, con listas -->
     <nav>
+        <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
         <ul class="menu">
             <li><a href="home.php">Home</a></li>
-            <li><a href="register.php">Add User</a></li>
+            <li><a href="">Servicios</a>
+                <ul>
+                    <?php
+                        if($_SESSION['id']==5) {
+                    ?>
+                        <li><a href="register.php">Registros</a></li>
+                    <?php
+                        }
+                    ?>
+                    <li><a href="">submenu2</a></li>
+                </ul>
+            </li>
         </ul>
-        <div class="search">
-            <form>
-                <input type="text" placeholder="Search">
-                <button type="submit" class="btn btn-light">Search</button>
-            </form>
-        </div>
+        
+        <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
     </nav>
+
+    <div class="container_logo">
+        <img src="img/Logo_desemfoque.png" alt="Logo_ues">
+    </div>
     <script src="script.js"></script>
 </body>
 
