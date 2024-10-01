@@ -63,6 +63,11 @@ ul, ol{
     margin-right: -10px;
 }
 
+.navigator {
+    background-color: rgb(228, 141, 12);
+    padding: 20px;
+}
+
 .btn {
     display: inline-block;
     background-color: aliceblue;
