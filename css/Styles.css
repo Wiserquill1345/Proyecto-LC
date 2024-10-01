@@ -87,13 +87,13 @@ ul, ol{
     padding-left: 5%;
     color: aliceblue;
 }
+
 .t-right {
     padding-left: 50%;
 }
 
 body {
     background-color: #E9EFF6;
-    background-image: url("../img/logo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
