@@ -31,17 +31,19 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </div>
     </div>
     <!-- Botones -->
-    <nav>
-        <ul class="menu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="register.php">Add User</a></li>
-        </ul>
-        <div class="search">
-            <form>
-                <input type="text" placeholder="Search">
-                <button type="submit" class="btn btn-light">Search</button>
-            </form>
-        </div>
+    <nav class="navigator">
+        <button class="btn btn-light">Inicio</button>
+        <button class="btn btn-light">Inventario</button>
+        <button class="btn btn-light">Pedidos</button>
+        <button class="btn btn-light">Entregas</button>
+        <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
+        <?php
+            if($_SESSION['id']==5) {
+        ?>
+        <button class="btn btn-light"  onclick="window.location.href='users.php'" >Control de usuarios</button>
+        <?php
+        }
+        ?>
     </nav>
     <script src="script.js"></script>
 </body>
