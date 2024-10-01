@@ -1,5 +1,5 @@
 # Proyecto-LC
-# Pongan aqui quienes van entrando para darme cuenta si pudieron entrar
-# SEBASTIAN MTZ
-# Luisjesusmartinezsoto
-# Jesus Tadeo Velazquez Borbon
+# Las contraseñas para cada usuario son:
+# Sebastian: admin
+# Diego: noesadmin
+# Maria: tampocoesadmin
