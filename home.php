@@ -40,7 +40,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     <?php
                         if($_SESSION['id']==5) {
                     ?>
-                        <li><a href="register.php">Registros</a></li>
+                        <li><a href="users.php">Registros</a></li>
                     <?php
                         }
                     ?>
