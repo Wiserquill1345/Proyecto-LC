@@ -2,7 +2,7 @@
 session_start();
 include "read_users.php"; 
     //Si se inicio sesion de forma exitosa nos muestra la pagina de home
-if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
+if($_SESSION['email']=="sebasmarti11@hotmail.com") {
     
 ?>
 <!DOCTYPE html>
@@ -12,38 +12,50 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control de usuarios</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
 <div class="Welcome">
         <div>
-            <img src="img/logo_welcome.png" alt="logo ues" class="image-logo">
+        <img src="img/Logo_setues.png" alt="logo ues" class="logo">
         </div>
         <div class="texts">
             <h1>Control de usuarios</h1>
         </div>
     </div>
     
-    <!-- Botones -->
-    <nav class="navigator">
-        <button class="btn btn-light" onclick="window.location.href='home.php'">Inicio</button>
-        <button class="btn btn-light">Inventario</button>
-        <button class="btn btn-light">Pedidos</button>
-        <button class="btn btn-light">Entregas</button>
+    <!-- menu para mostrar los elementos que tendra el menu, con listas -->
+    <nav>
+        <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
+        <ul class="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="">Servicios</a>
+                <ul>
+                    <?php
+                        if($_SESSION['id']==5) {
+                    ?>
+                        <li><a href="users.php">Registros</a></li>
+                    <?php
+                        }
+                    ?>
+                    <li><a href="">submenu2</a></li>
+                </ul>
+            </li>
+        </ul>
+        
         <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
-        <?php
-            if($_SESSION['id']==5) {
-        ?>
-        <button class="btn btn-light"  onclick="window.location.href='users.php'" >Control de usuarios</button>
-        <?php
-        }
-        ?>
     </nav>
     <div class="p-4 container">
         <div class="p-4 box ">
             <h4 class="display-4 text-center">Usuarios</h4>
+            <?php if(isset($_GET['error'])) { ?>
+                                    <p class="error"><?php echo $_GET['error']; ?></p>
+                                <?php } ?>
+            <?php if(isset($_GET['exito'])) { ?>
+                                    <p class="exito"><?php echo $_GET['exito']; ?></p>
+                                <?php } ?>
             <hr>
             <?php if(mysqli_num_rows($result)){ ?>
 
@@ -54,6 +66,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,7 +80,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 <th scope="row"><?=$i?></th>
                 <td><?=$rows['nombre']?></td>
                 <td><?php echo $rows['email'];?></td>
-                </tr>
+                <td><a href="update.php?id=<?=$rows['id']?>"
+                       class="btn btn-info">Actualizar</a>
+                    <a href="delete.php?id=<?=$rows['id']?>"
+                       class="btn btn-danger">Borrar</td>
+            </tr>
                 <?php } ?>
             </tbody>
             </table>

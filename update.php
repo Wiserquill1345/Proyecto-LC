@@ -1,4 +1,4 @@
-<?php
+<?php include 'update_users.php'; 
 //Inicio la sesion o reanuda la que ya exista
 session_start();
     //Si se inicio sesion de forma exitosa nos muestra la pagina de home
@@ -9,17 +9,17 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro de usuarios</title>
+        <title>Actualizar usuarios</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/bootstrap.css">
     </head>
     <body>
         <div class="Welcome">
             <div>
-                <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+            <img src="img/Logo_setues.png" alt="logo ues" class="logo">
             </div>
             <div class="texts">
-                <h1>Registro de estudiante</h1>
+                <h1>Actualizacion de usuarios</h1>
             </div>
         </div>
             <!-- menu para mostrar los elementos que tendra el menu, con listas -->
@@ -49,10 +49,10 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
                 <div class="col-md-4 ">
                     <div class="card ">
                         <div class="card-header d-flex justify-content-center">
-                            <h4>Añadir usuario</h4>
+                            <h4>Actualizar</h4>
                         </div>
 
-                        <form action="signup-check.php" method="post" id="Userform" class="card-body">
+                        <form action="update_users.php" method="post" class="card-body">
                             <?php if(isset($_GET['error'])) { ?>
                                 <p class="error"><?php echo $_GET['error']; ?></p>
                             <?php } ?>   
@@ -63,34 +63,18 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
                             
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <?php if(isset($_GET['name'])) { ?>
                                     <input type="text" 
                                         name="name" 
-                                        placeholder="Nombre" 
                                         class="form-control"
-                                        value="<?php echo $_GET['name']; ?>">
-                                <?php }else{ ?>
-                                    <input type="text" 
-                                        name="name" 
-                                        placeholder="Nombre" 
-                                        class="form-control">
-                                <?php } ?>
+                                        value="<?=$row['nombre']?>">
                             </div>
                             
                             <div class="form-group">
                                 <label>Correo electronico</label>
-                                <?php if(isset($_GET['email'])) { ?>
                                     <input type="email" 
                                         name="email" 
-                                        placeholder="Correo electronico" 
                                         class="form-control"
-                                        value="<?php echo $_GET['email']; ?>">
-                                <?php }else{ ?>
-                                    <input type="email"
-                                        name="email" 
-                                        placeholder="Correo electronico" 
-                                        class="form-control">
-                                <?php } ?>
+                                        value="<?=$row['email']?>">
                             </div>
 
                             <div class="form-group">
@@ -100,17 +84,12 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
                                     placeholder="********" 
                                     class="form-control">
                             </div>
-
-                            <div class="form-group">
-                                <label>Repetir contraseña</label>
-                                <input type="password" 
-                                    name="re-password" 
-                                    placeholder="********" 
-                                    class="form-control">
-                            </div>
-
+                            <input type="text"
+                                    name="id"
+                                    value="<?=$row['id']?>"
+                                    hidden>
                             <div class="div-btn_register d-flex align-items-center">
-                                <button type="submit" id="Registro" class="btn btn-warning btn-block">Registrar</button>
+                                <button type="submit" class="btn btn-warning btn-block" name="update">Guardar</button>
                             </div>
                         </form>
                     </div>
