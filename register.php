@@ -32,11 +32,11 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
                     <?php
                         if($_SESSION['id']==5) {
                     ?>
-                        <li><a href="users.php">Registros</a></li>
+                        <li><a class="sublista" href="users.php">Registros</a></li>
                     <?php
                         }
                     ?>
-                    <li><a href="">submenu2</a></li>
+                    <li><a class="sublista" href="">submenu2</a></li>
                 </ul>
             </li>
         </ul>

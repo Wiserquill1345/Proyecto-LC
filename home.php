@@ -10,7 +10,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/Styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -40,11 +40,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     <?php
                         if($_SESSION['id']==5) {
                     ?>
-                        <li><a href="users.php">Registros</a></li>
+                        <li><a class="sublista" href="users.php">Registros</a></li>
                     <?php
                         }
                     ?>
-                    <li><a href="">submenu2</a></li>
+                    <li><a class="sublista" href="">submenu2</a></li>
                 </ul>
             </li>
         </ul>
