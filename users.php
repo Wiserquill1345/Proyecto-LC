@@ -12,7 +12,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control de usuarios</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -27,19 +27,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     </div>
     
     <!-- Botones -->
-    <nav class="navigator">
-        <button class="btn btn-light" onclick="window.location.href='home.php'">Inicio</button>
-        <button class="btn btn-light">Inventario</button>
-        <button class="btn btn-light">Pedidos</button>
-        <button class="btn btn-light">Entregas</button>
+    <nav>
+        <ul class="menu">
+            <li><a href="home.php">Home</a></li>
+        </ul>
         <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
-        <?php
-            if($_SESSION['id']==5) {
-        ?>
-        <button class="btn btn-light"  onclick="window.location.href='users.php'" >Control de usuarios</button>
-        <?php
-        }
-        ?>
     </nav>
     <div class="p-4 container">
         <div class="p-4 box ">

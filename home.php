@@ -44,7 +44,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     <?php
                         }
                     ?>
-                    <li><a href="">submenu2</a></li>
+                    <li><a href="users.php">Control de usuarios</a></li>
                 </ul>
             </li>
         </ul>
