@@ -43,8 +43,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
                         <li><a class="sublista" href="users.php">Registros</a></li>
                     <?php
                         }
-                    ?>
-                    <li><a class="sublista" href="">submenu2</a></li>
+                    ?>                    
+                  <li><a class="sublista" href="users.php">Control de usuarios</a></li>
                 </ul>
             </li>
         </ul>

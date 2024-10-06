@@ -12,7 +12,7 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control de usuarios</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -26,6 +26,7 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
         </div>
     </div>
     
+
     <!-- menu para mostrar los elementos que tendra el menu, con listas -->
     <nav>
         <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
