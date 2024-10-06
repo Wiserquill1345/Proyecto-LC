@@ -29,18 +29,11 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
             <li><a href="home.php">Home</a></li>
             <li><a href="">Servicios</a>
                 <ul>
-                    <?php
-                        if($_SESSION['id']==5) {
-                    ?>
-                        <li><a class="sublista" href="users.php">Registros</a></li>
-                    <?php
-                        }
-                    ?>
-                    <li><a class="sublista" href="">submenu2</a></li>
+                    <li><a class="sublista" href="users.php">Control de usuarios</a></li>               
+                    <li><a class="sublista" href="users.php">---</a></li>
                 </ul>
             </li>
         </ul>
-        
         <!-- Crea un boton para el admin con la funcion de crear nuevos usuarios -->
     </nav>
 
