@@ -15,21 +15,21 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
-    
-    <div class="Welcome">
-        <div>
-            <img src="img/Logo_setues.png" alt="logo ues" class="logo">
-        </div>
-        <div class="texts">
-            <h1>Portal personal</h1>
-        </div>
-        <div class="texts t-right">
-            <!-- Muestra el nombre del usuario -->
-            <h1>Bienvenid@, <?php echo $_SESSION['name']; ?></h1>
-            <!-- Cierra la sesion del usuario -->
-            <a href="logout.php">Logout</a>
+<div class="Welcome d-flex justify-content-between">
+    <div class="texts d-flex align-items-center">
+        <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+        <h1>Portal personal</h1>
+    </div>
+    <div class="texts d-flex align-items-end flex-column pr-5">
+        <!-- Muestra el nombre del usuario -->
+        <h1>Bienvenid@, <?php echo $_SESSION['name']; ?></h1>
+        <!-- Cierra la sesion del usuario -->
+        <div class="links ">
+            <a class="text-decoration-none text-white pr-5" href="logout.php">Perfil</a>
+            <a class="text-decoration-none text-white pr-4" href="logout.php">Cerrar Sesion</a>
         </div>
     </div>
+</div>
     <!-- menu para mostrar los elementos que tendra el menu, con listas -->
     <nav>
         <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->

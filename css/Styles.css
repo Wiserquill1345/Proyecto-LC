@@ -52,10 +52,7 @@ ul, ol{
 }
 
 
-
 .Welcome {
-    display: flex;
-    align-items: center;
     background-color:rgb(91, 41, 42) ;
     padding: 10px;
 }
@@ -68,7 +65,14 @@ ul, ol{
 .logo{
     width: 70px;
     height: 110px;
-    margin-right: -10px;
+    margin-right: 10px;
+}
+
+.links{
+    margin-bottom: 20px;
+}
+.links a:hover{
+    color:rgb(228, 141, 12)  !important;
 }
 
 .navigator {
@@ -92,7 +96,6 @@ ul, ol{
 
 .texts {
     align-self: center;
-    padding-left: 5%;
     color: aliceblue;
 }
 
