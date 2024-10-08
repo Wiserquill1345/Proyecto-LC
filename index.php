@@ -11,14 +11,12 @@
 </head>
 
 <body>
-    <div class="Welcome">
-        <div>
-            <img src="img/logo_setues.png" alt="logo ues" class="image-logo">
-        </div>
-        <div class="texts">
-            <h1>Inicio de sesion</h1>
-        </div>
+<div class="Welcome d-flex justify-content-between">
+    <div class="texts d-flex align-items-center">
+        <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+        <h1>Inicio de sesion</h1>
     </div>
+</div>
     <nav></nav>
 
     <!-- Formulario del login-->

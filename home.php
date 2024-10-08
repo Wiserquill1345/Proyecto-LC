@@ -20,7 +20,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
         <img src="img/Logo_setues.png" alt="logo ues" class="logo">
         <h1>Portal personal</h1>
     </div>
-    <div class="texts d-flex align-items-end flex-column pr-5">
+    <div class="texts t2 d-flex align-items-end flex-column pr-5">
         <!-- Muestra el nombre del usuario -->
         <h1>Bienvenid@, <?php echo $_SESSION['name']; ?></h1>
         <!-- Cierra la sesion del usuario -->

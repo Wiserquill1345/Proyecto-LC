@@ -17,14 +17,12 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
     <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
-<div class="Welcome">
-        <div>
+<div class="Welcome d-flex justify-content-between">
+    <div class="texts d-flex align-items-center">
         <img src="img/Logo_setues.png" alt="logo ues" class="logo">
-        </div>
-        <div class="texts">
-            <h1>Control de usuarios</h1>
-        </div>
+        <h1>Control de usuarios</h1>
     </div>
+</div>
     
 
     <!-- menu para mostrar los elementos que tendra el menu, con listas -->

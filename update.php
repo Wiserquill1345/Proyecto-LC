@@ -15,14 +15,12 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
         <link rel="stylesheet" href="css/bootstrap.css">
     </head>
     <body>
-        <div class="Welcome">
-            <div>
-            <img src="img/Logo_setues.png" alt="logo ues" class="logo">
-            </div>
-            <div class="texts">
-                <h1>Actualizacion de usuarios</h1>
-            </div>
-        </div>
+    <div class="Welcome d-flex justify-content-between">
+    <div class="texts d-flex align-items-center">
+        <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+        <h1>Actualización de usuarios</h1>
+    </div>
+</div>
             <!-- menu para mostrar los elementos que tendra el menu, con listas -->
     <nav>
         <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->

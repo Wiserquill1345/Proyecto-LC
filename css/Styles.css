@@ -1,10 +1,11 @@
 /* Globales */
-
+h1{
+    font-size: 40px !important;
+}
 /* este container es para la imagen del logo de setues, por debajo del nav */
 .container_logo{
     text-align: center;
 }
-
 nav{
     background-color: rgb(228, 141, 12);
     width: 100%;
@@ -56,7 +57,9 @@ ul, ol{
     background-color:rgb(91, 41, 42) ;
     padding: 10px;
 }
-
+.t2{
+    margin-top: -20px !important;
+}
 .image-logo{
     max-width: 100px !important;
     height: 100px !important; 
@@ -69,7 +72,7 @@ ul, ol{
 }
 
 .links{
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .links a:hover{
     color:rgb(228, 141, 12)  !important;
