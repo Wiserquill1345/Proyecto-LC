@@ -1,10 +1,24 @@
 /* Globales */
+body {
+    background-color: #E9EFF6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 20%;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    background-image: url("../img/Logo_desemfoque.png");
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2%;
+    background-color: rgb(228, 141, 12);
+}
 h1{
     font-size: 40px !important;
-}
-/* este container es para la imagen del logo de setues, por debajo del nav */
-.container_logo{
-    text-align: center;
 }
 nav{
     background-color: rgb(228, 141, 12);
@@ -17,6 +31,14 @@ nav{
 ul, ol{
     list-style: none;
 }
+/* este container es para la imagen del logo de setues, por debajo del nav */
+.index-body {
+    background-image: none;
+}
+.container_logo{
+    text-align: center;
+}
+
 .menu{
     padding-top: 10px;
 }
@@ -104,25 +126,6 @@ ul, ol{
 
 .t-right {
     padding-left: 50%;
-}
-
-body {
-    background-color: #E9EFF6;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 20%;
-    min-height: 100vh;
-    margin: 0;
-    position: relative;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 2%;
-    background-color: rgb(228, 141, 12);
 }
 
 /* Estilos para el documento login */
@@ -253,4 +256,13 @@ footer {
 }
 th,td{
     padding:20px !important;
+    background-color: white;
+}
+
+.add_user{
+    padding: 0 0 100px 10px !important;
+}
+
+.update_user{
+    padding: 0 0 150px 10px !important;
 }

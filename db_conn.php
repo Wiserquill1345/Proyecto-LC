@@ -6,7 +6,7 @@ $password="";
 $db_name="ues_db";
 
 $conn = mysqli_connect ($sname, $uname, $password, $db_name);
-    // si los datos proporcionados corresponden a la base de datos elegida entonces se realiza la conexion
+    // si no se realiza la conexion correctamente
 if(!$conn){
-    echo "Conexion completa";
+    echo "Error en la conexion";
 }
