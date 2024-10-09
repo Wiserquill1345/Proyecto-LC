@@ -5,6 +5,7 @@
     text-align: center;
 }
 
+/*Este es el nav que utilizamos para poner los botones para que el usuario navege sobre ella y le daños un taño, un espacio y un color para que se vean las letras*/
 nav{
     background-color: rgb(228, 141, 12);
     width: 100%;
@@ -13,12 +14,17 @@ nav{
     padding: 0px 1px;
 }
 
+/*Aqui lo que hacemos, es ocultar el estilo que tienen las listas, el punto que se forma al añadir un <li>*/
 ul, ol{
     list-style: none;
 }
+
+/*Aqui le damos unos espacios al menu, que vienen siendo nuestros botones*/
 .menu{
     padding-top: 10px;
 }
+
+/*Aqui le decimos que se va a meter por el menu, en donde estan los li, quiero que me haga los estilos en los articulos (a)*/
 .menu li a{
     background-color: rgb(228, 141, 12) ;
     color: black;
@@ -28,25 +34,30 @@ ul, ol{
     height: 100%;
     display: block;
 }
+
 .sublista{
     margin-top: 0 !important;
 }
 
+/*Aqui movemos las listas a la izquierda*/
 .menu > li{
     float: left;
 }
 
+/*Aqui lo que hacemos, es crear como una animacion, al momento de poner el cursor sobre los articulos en las listas*/
 .menu li a:hover{
     background-color: rgb(91, 41, 42);
     color: aliceblue;
 }
 
+/*En este estilo, lo que hacemos es ocultar lo que viene siendo las sublistas, porque si lo quitamos, se van a ver y no va a hacer la animacion, de que se despliegue*/
 .menu li ul{
     display: none;
     position: absolute;
     min-width: 140px;
 }
 
+/*Y aqui añadimos esa animacion, en donde se agrupara por bloques*/
 .menu li:hover > ul{
     display: block;
 }
