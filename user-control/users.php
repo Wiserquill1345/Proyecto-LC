@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "read_users.php";
+include "php/read_users.php";
 //Si el que inicia la sesion es el admin entonces nos muestra el documento
 if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
 
@@ -13,33 +13,48 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Control de usuarios</title>
-        <link rel="stylesheet" href="css/Styles.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="../css/Styles.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/normalize.css">
     </head>
 
     <!-- Cuerpo del documento -->
     <body>
         <div class="Welcome d-flex justify-content-between">
             <div class="texts d-flex align-items-center">
-                <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+                <img src="../img/Logo_setues.png" alt="logo ues" class="logo">
                 <h1>Control de usuarios</h1>
             </div>
         </div>
 
 
-        <!-- menu para mostrar los elementos que tendra el menu, con listas -->
-        <nav>
+            <nav>
+            <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
             <ul class="menu">
-                <li><a href="home.php">Home</a></li>
+                <!-- link al Inicio -->
+                <li><a href="../home.php">Home</a></li>
+                <!-- boton para desplegar los servicios del portal -->
                 <li><a href="">Servicios</a>
                     <ul>
-                        <li><a class="sublista" href="users.php">Control de usuarios</a></li>
-                        <li><a class="sublista" href="users.php">---</a></li>
+                        <li><a class="sublista" href="../empleados.php">Lista de empleados</a></li>
+                        <li><a class="sublista" href="../empleados.php">---</a></li>
                     </ul>
                 </li>
+                <?php
+                    if ($_SESSION['id'] == 5) {
+                ?>
+                <li><a href="">Control de usuarios</a>
+                    <ul>
+                        <li><a class="sublista" href="users.php">Lista de usuarios</a></li>
+                        <li><a class="sublista" href="create.php">Alta de usuarios</a></li>
+                    </ul>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </nav>
+
 
         <!-- Tabla de usuarios -->
         <div class="p-4 container">
@@ -84,17 +99,13 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                                         <!--Inserta el boton de actualizar usuario-->
                                         <a href="update.php?id=<?= $rows['id'] ?>" class="btn btn-info">Actualizar</a>
                                         <!--Inserta el boton de borrar usuario-->
-                                        <a href="delete.php?id=<?= $rows['id'] ?>" class="btn btn-danger">Borrar
+                                        <a href="php/delete.php?id=<?= $rows['id'] ?>" class="btn btn-danger">Borrar
                                     </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 <?php } ?>
-                <div class="d-flex justify-content-end">
-                    <!--Inserta el boton de crear usuario-->
-                    <button class="btn btn-success" onclick="window.location.href='register.php'">Crear usuario</button>
-                </div>
             </div>
         </div>
     </body>
@@ -106,7 +117,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
     <?php
 } else {
     //si no se encuentra al usuario o la contraseña es incorrecta nos regresa al login
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>

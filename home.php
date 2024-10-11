@@ -49,17 +49,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 <!-- boton para desplegar los servicios del portal -->
                 <li><a href="">Servicios</a>
                     <ul>
-                        <!-- Si el usuario coincide al del admin, se mostrara el control de usuarios -->
-                        <?php
-                        if ($_SESSION['id'] == 5) {
-                            ?>
-                            <li><a class="sublista" href="users.php">Control de usuarios</a></li>
-                            <?php
-                        }
-                        ?>
-                        <li><a class="sublista" href="users.php">---</a></li>
+                        <li><a class="sublista" href="empleados.php">Lista de empleados</a></li>
+                        <li><a class="sublista" href="empleados.php">---</a></li>
                     </ul>
                 </li>
+                <?php
+                    if ($_SESSION['id'] == 5) {
+                ?>
+                <li><a href="">Control de usuarios</a>
+                    <ul>
+                        <li><a class="sublista" href="user-control/users.php">Lista de usuarios</a></li>
+                        <li><a class="sublista" href="user-control/create.php">Alta de usuarios</a></li>
+                    </ul>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </nav>
         <div class="container_logo">

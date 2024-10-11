@@ -1,4 +1,4 @@
-<?php include 'update_users.php';
+<?php include 'php/update_users.php';
 //Inicio la sesion o reanuda la que ya exista
 session_start();
 //Si el que inicia la sesion es el admin entonces nos muestra el documento
@@ -12,16 +12,16 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Actualizar usuarios</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/Styles.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/Styles.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
     </head>
 
     <!-- Cuerpo del documento -->
     <body>
         <div class="Welcome d-flex justify-content-between">
             <div class="texts d-flex align-items-center">
-                <img src="img/Logo_setues.png" alt="logo ues" class="logo">
+                <img src="../img/Logo_setues.png" alt="logo ues" class="logo">
                 <h1>Actualización de usuarios</h1>
             </div>
         </div>
@@ -29,15 +29,30 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         <nav>
             <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
             <ul class="menu">
-                <li><a href="home.php">Home</a></li>
+                <!-- link al Inicio -->
+                <li><a href="../home.php">Home</a></li>
+                <!-- boton para desplegar los servicios del portal -->
                 <li><a href="">Servicios</a>
                     <ul>
-                        <li><a class="sublista" href="users.php">Control de usuarios</a></li>
-                        <li><a class="sublista" href="users.php">---</a></li>
+                        <li><a class="sublista" href="../empleados.php">Lista de empleados</a></li>
+                        <li><a class="sublista" href="../empleados.php">---</a></li>
                     </ul>
                 </li>
+                <?php
+                    if ($_SESSION['id'] == 5) {
+                ?>
+                <li><a href="">Control de usuarios</a>
+                    <ul>
+                        <li><a class="sublista" href="users.php">Lista de usuarios</a></li>
+                        <li><a class="sublista" href="create.php">Alta de usuarios</a></li>
+                    </ul>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </nav>
+
 
         <div class="container">
             <div class="row d-flex justify-content-center container-register">
@@ -48,7 +63,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                         </div>
                         
                         <!-- Formulario del documento -->
-                        <form action="update_users.php" method="post" class="card-body">
+                        <form action="php/update_users.php" method="post" class="card-body">
                             <!-- Texto mostrado al haber un error en la operacion de la actualizacion de usuario -->
                             <?php if (isset($_GET['error'])) { ?>
                                 <p class="error"><?php echo $_GET['error']; ?></p>
@@ -95,7 +110,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
     <?php
 } else {
     //si no es el admin de regreso al login
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>

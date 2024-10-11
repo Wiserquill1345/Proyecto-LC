@@ -3,7 +3,7 @@
 //si se obtiene la id del usuario se realiza la operacion
 if (isset($_GET['id'])) {
     //Hacemos conexion con la base de datos
-    include "db_conn.php";
+    include "../../db_conn.php";
 
     //funcion para validad datos
     function validate($data)
@@ -26,14 +26,14 @@ if (isset($_GET['id'])) {
 
     if ($result) {
         //si la eliminacion del usuario fue exitosa mandamos el mensaje de que la operacion fue exitosa
-        header("Location: users.php?id=$id&exito=La cuenta se ha borrado exitosamente");
+        header("Location: ../users.php?id=$id&exito=La cuenta se ha borrado exitosamente");
         exit();
     } else {
         //si la eliminacion del usuario no fue exitosa mandamos el mensaje de que ocurrio un error
-        header("Location: users.php?id=$id&error=ha ocurrido un error desconocido&$user_data");
+        header("Location: ../users.php?id=$id&error=ha ocurrido un error desconocido&$user_data");
         exit();
     }
 } else {
     //si no se obtiene la id mandamos al usuario al control de usuarios
-    header("Location: users.php");
+    header("Location: ../users.php");
 }
