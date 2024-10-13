@@ -30,7 +30,7 @@ if($_SESSION['email']=="sebasmarti11@hotmail.com") {
             <li><a href="">Servicios</a>
                 <ul>
                     <li><a class="sublista" href="users.php">Control de usuarios</a></li>               
-                    <li><a class="sublista" href="users.php">---</a></li>
+                    <li><a class="sublista" href="registerEmployee.php">Control de profesores</a></li>
                 </ul>
             </li>
         </ul>
