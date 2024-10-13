@@ -9,6 +9,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
     <html lang="en">
 
     <!-- Cabeza del documento -->
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,16 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         <link rel="stylesheet" href="../css/Styles.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/normalize.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
     </head>
 
     <!-- Cuerpo del documento -->
+
     <body>
         <div class="Welcome d-flex justify-content-between">
             <div class="texts d-flex align-items-center">
@@ -28,7 +36,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         </div>
 
 
-            <nav>
+        <nav>
             <!-- este es el menu, donde se pondra los botones de dicha operacion que desea realizar -->
             <ul class="menu">
                 <!-- link al Inicio -->
@@ -41,16 +49,16 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                     </ul>
                 </li>
                 <?php
-                    if ($_SESSION['id'] == 5) {
-                ?>
-                <li><a href="">Control de usuarios</a>
-                    <ul>
-                        <li><a class="sublista" href="users.php">Lista de usuarios</a></li>
-                        <li><a class="sublista" href="create.php">Alta de usuarios</a></li>
-                    </ul>
-                </li>
-                <?php
-                    }
+                if ($_SESSION['id'] == 5) {
+                    ?>
+                    <li><a href="">Control de usuarios</a>
+                        <ul>
+                            <li><a class="sublista" href="users.php">Lista de usuarios</a></li>
+                            <li><a class="sublista" href="create.php">Alta de usuarios</a></li>
+                        </ul>
+                    </li>
+                    <?php
+                }
                 ?>
             </ul>
         </nav>
@@ -97,9 +105,38 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                                     <!--columna de botones-->
                                     <td>
                                         <!--Inserta el boton de actualizar usuario-->
-                                        <a href="update.php?id=<?= $rows['id'] ?>" class="btn btn-info">Actualizar</a>
-                                        <!--Inserta el boton de borrar usuario-->
-                                        <a href="php/delete.php?id=<?= $rows['id'] ?>" class="btn btn-danger">Borrar
+                                        <a href="update.php?id=<?= $rows['id'] ?>" class="btn btn-primary">Actualizar</a>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#modalEliminar<?= $rows['id'] ?>">
+                                            Eliminar
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modalEliminar<?= $rows['id'] ?>" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Eliminar usuario</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ¿Estas seguro de que quieres eliminar al usuario: 
+                                                        "<span class="text-danger"><?= $rows['nombre'] ?></span>"?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cerrar</button>
+                                                        <!--Inserta el boton de borrar usuario-->
+                                                        <a href="php/delete.php?id=<?= $rows['id'] ?>"
+                                                            class="btn btn-danger">Borrar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -108,6 +145,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                 <?php } ?>
             </div>
         </div>
+        <script src="../script.js"></script>
     </body>
     <footer>
 
