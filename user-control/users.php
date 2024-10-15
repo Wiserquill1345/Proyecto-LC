@@ -16,13 +16,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
         <title>Control de usuarios</title>
         <link rel="stylesheet" href="../css/Styles.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/normalize.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
 
     <!-- Cuerpo del documento -->
@@ -145,7 +139,10 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                 <?php } ?>
             </div>
         </div>
-        <script src="../script.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js">
+</script>
     </body>
     <footer>
 
