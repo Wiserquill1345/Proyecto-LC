@@ -38,7 +38,7 @@ if ($_SESSION['email'] == "sebasmarti11@hotmail.com") {
                 <!-- boton para desplegar los servicios del portal -->
                 <li><a href="">Servicios</a>
                     <ul>
-                        <li><a class="sublista" href="../empleados.php">Lista de empleados</a></li>
+                        <li><a class="sublista" href="../upload.php">Subida de polizas</a></li>
                         <li><a class="sublista" href="../empleados.php">---</a></li>
                     </ul>
                 </li>

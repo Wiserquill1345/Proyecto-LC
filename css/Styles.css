@@ -313,3 +313,8 @@ th,td{
     border-color: #4caf50;
     background-color: #e0ffe0;
 }
+
+.epol{
+    max-width: 400px !important;
+    width:90% !important;
+}

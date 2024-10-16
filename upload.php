@@ -35,34 +35,24 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
             <ul class="menu">
                 <!-- link al Inicio -->
                 <li><a href="home.php">Home</a></li>
-                <!-- boton para desplegar los servicios del portal -->
-                <li><a href="">Servicios</a>
-                    <ul>
-                        <li><a class="sublista" href="empleados.php">Lista de empleados</a></li>
-                        <li><a class="sublista" href="empleados.php">---</a></li>
-                    </ul>
-                </li>
-                <?php
-                if ($_SESSION['id'] == 5) {
-                    ?>
-                    <li><a href="">Control de usuarios</a>
-                        <ul>
-                            <li><a class="sublista" href="user-control/users.php">Lista de usuarios</a></li>
-                            <li><a class="sublista" href="user-control/create.php">Alta de usuarios</a></li>
-                        </ul>
-                    </li>
-                    <?php
-                }
-                ?>
+                
             </ul>
         </nav>
-        <div class="contenedor-main d-flex justify-content-center align-items-center">
+        <form action="upload_files.php" method="post" enctype="multipart/form-data">
+            <div class="contenedor-main d-flex justify-content-center align-items-center flex-column">
+            <?php if(isset($_GET['error'])): ?>
+            <p class="error epol"><?php echo $_GET['error'];?></p>
+        <?php endif ?>    
             <div class="contenedor-subir-archivos" id="dropArea">
-                <input type="file" style="display:none;" id="fileInput">
-                <img src="img/icon-file.png" id="uploadBtn">
-                <span id="fileName">Sin archivo</span>
+                    <input type="file" style="display:none;" id="fileInput" name="my_files">
+                    <img src="img/icon-file.png" id="uploadBtn">
+                    <span id="fileName">Sin archivo</span>
+                </div>
+                <div class="p-4">
+                    <input type="submit" name="submit" value="Subir">
+                </div>
             </div>
-        </div>
+        </form>
 
         <script type="text/javascript" src="script.js"></script>
     </body>
