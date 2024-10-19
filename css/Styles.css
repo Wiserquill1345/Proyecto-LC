@@ -345,3 +345,44 @@ input[type="submit"]:hover{
     border: 1px solid orange !important;
     transition: .5s;
 }
+
+.containertbl{
+    max-width: 1440px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tbl_container h2{
+    padding: 2rem 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.tbl{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl thead{
+    background: #E48D0C;
+}
+
+.tbl thead tr th{
+    padding: 0.8rem;
+    letter-spacing: 0.2rem;
+    vertical-align: top;
+    border: 1px solid #aab7b8;
+}
+
+.tbl tbody tr td{
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #aab7b8;
+    padding: 0.8rem;
+}
+
+.tbl tr:nth-child(even){
+    background: #ccc;
+}
