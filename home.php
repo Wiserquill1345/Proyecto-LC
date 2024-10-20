@@ -50,7 +50,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 <li><a href="">Servicios</a>
                     <ul>
                         <li><a class="sublista" href="upload.php">Subida de polizas</a></li>
-                        <li><a class="sublista" href="empleados.php">---</a></li>
+                        <li><a class="sublista" href="registerEmployee.php">Control de profesores</a></li>
                     </ul>
                 </li>
                 <?php

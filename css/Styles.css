@@ -318,3 +318,129 @@ th,td{
     max-width: 400px !important;
     width:90% !important;
 }
+/*Estilos para el formulario para el de olvidar la contraseña*/
+
+.formulario_Olvidar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: #fde5bf;
+    border-radius: 10px;
+}
+
+.formulario_Olvidar h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.formulario_Olvidar form{
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+form .correo{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 10px 0;
+}
+
+.correo input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.correo label{
+    position: absolute;
+    top: 60%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.çorreo span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.correo input:focus ~ label,
+.correo input:focus ~ label{
+    top: -5px;
+    color: #6C3483;
+}
+
+.correo input:focus ~ span::before,
+.correo input:focus ~ span::before{
+    width: 100%;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    background: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border: 1px solid orange !important;
+    transition: .5s;
+}
+
+.containertbl{
+    max-width: 1440px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tbl_container h2{
+    padding: 2rem 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.tbl{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl thead{
+    background: #E48D0C;
+}
+
+.tbl thead tr th{
+    padding: 0.8rem;
+    letter-spacing: 0.2rem;
+    vertical-align: top;
+    border: 1px solid #aab7b8;
+}
+
+.tbl tbody tr td{
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #aab7b8;
+    padding: 0.8rem;
+}
+
+.tbl tr:nth-child(even){
+    background: #ccc;
+}
