@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de empleados</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
-<body>
+<body class="index-body">
     <div class="p-4 container">
         <div class="tbl_container">
             <h2>Listas de polizas</h2>
             <table class="tbl">
                 <thead>
                     <tr>
-                        <th>Folio</th>
-                        <th>Tipo</th>
-                        <th>Fecha</th>
-                        <th>Elaboro</th>
+                        <th scope="col">Folio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Elaboro</th>
                         <th colspan="4">Acciones</th>
                     </tr>
                 </thead>

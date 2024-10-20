@@ -16,7 +16,7 @@
                 <input type="email" id="miCorreo" require>
                 <label>Correo electronico</label>
             </div>
-            <input type="submit" value="Enviar">
+            <input class="forget-input" type="submit" value="Enviar">
         </form>
     </div>
 </body>
