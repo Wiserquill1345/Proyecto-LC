@@ -73,6 +73,34 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <div class="p-4 container">
         <div class="tbl_container">
             <h2>Listas de polizas</h2>
+            <div class="d-flex flex-row justify-content-between align-items-end">
+                <div>
+                    <input type="text" class="form-control mr-5 inp-search" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                
+                <div class="sel-search-first">
+                    <span class="d-flex justify-content-center pb-2">Tipo:</span>
+                    <select id="select" class="form-control">
+                        <option value="6th">6Th</option>
+                        <option value="7th">7Th</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="d-flex justify-content-center pb-2">Fecha:</span>
+                    <select id="select" class="form-control">
+                        <option value="6th">6Th</option>
+                        <option value="7th">7Th</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="d-flex justify-content-center pb-2">Elaboro:</span>
+                    <select id="select" class="form-control">
+                        <option value="6th">6Th</option>
+                        <option value="7th">7Th</option>
+                    </select>
+                </div>
+                <button class="btn btn-warning ml-5 btn-search" type="button">BUSCAR</button>
+            </div>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
@@ -85,7 +113,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
             <?php if (mysqli_num_rows($result)) { ?>
                 <table class="tbl">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th scope="col">Folio</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
