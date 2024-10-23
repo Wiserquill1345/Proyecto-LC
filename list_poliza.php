@@ -11,7 +11,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lista de empleados</title>
+        <title>Lista de polizas</title>
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -70,7 +70,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </nav>
         <div class="container_logo">
         </div>
-    </body>
     <div class="p-4 container">
         <div class="tbl_container">
             <h2>Listas de polizas</h2>
@@ -142,8 +141,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                                 </div>
                                 </td>
                                 <td>
-                                    <button onclick="window.location.href='print_poliza.php?id=<?= $rows['id'] ?>'"><i
-                                            class="fa fa-print"></i></button>
+                                    <button onclick="window.open('uploads/<?= $rows['file_url'] ?>','_blank')">
+                                        <i class="fa fa-print"></i></button>
                                 </td>
                             </tr>
                         <?php } ?>
