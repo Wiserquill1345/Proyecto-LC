@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "read_polizas.php";
-
+$nombre="";
 if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     ?>
 
@@ -73,11 +73,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <div class="p-4 container">
         <div class="tbl_container">
             <h2>Listas de polizas</h2>
+        <form action="list_poliza.php?nombre=<?php $nombre; ?>" method="GET">
             <div class="d-flex flex-row justify-content-between align-items-end">
                 <div>
-                    <input type="text" class="form-control mr-5 inp-search" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control mr-5 inp-search" name="nombre" id="nombre"
+                           placeholder="nombre" aria-label="nombre" aria-describedby="basic-addon2">
                 </div>
-                
+                <?php if(isset($_POST['nombre'])){
+                    $nombre = $_POST['nombre'];} ?>
                 <div class="sel-search-first">
                     <span class="d-flex justify-content-center pb-2">Tipo:</span>
                     <select id="select" class="form-control">
@@ -99,8 +102,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                         <option value="7th">7Th</option>
                     </select>
                 </div>
-                <button class="btn btn-warning ml-5 btn-search" type="button">BUSCAR</button>
-            </div>
+                <button type="submit" class="btn btn-warning ml-5 btn-search" type="button">BUSCAR</button>
+                </div>    
+        </form>
+            
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
@@ -192,7 +197,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                         </tr>
                     </tbody>
                 </table>
-            <?php } ?>
+            <?php }else{
+
+            ?>
+            <h3 class="text-center">No se encuentran archivos</h3>
+            <?php }
+            
+            ?>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.js">
