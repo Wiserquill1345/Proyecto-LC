@@ -30,7 +30,7 @@ if(isset($_POST['submit']) && isset($_FILES['my_files'])) {
                 $sql = "INSERT INTO files(file_url) 
                         VALUES('$new_file_name')";
                 mysqli_query($conn, $sql);
-                header("Location: files.php");
+                header("Location: list_poliza.php");
             }else{
                 $em = "No puedes subir archivos de este tipo";
                 header("Location: upload.php?error=$em");

@@ -106,6 +106,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 </div>    
         </form>
             
+            <hr>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
@@ -113,7 +114,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
             <?php if (isset($_GET['exito'])) { ?>
                 <p class="exito"><?php echo $_GET['exito']; ?></p>
             <?php } ?>
-            <hr>
             <!-- Si detecta registros de usuarios nos mostrara la tabla -->
             <?php if (mysqli_num_rows($result)) { ?>
                 <table class="tbl">
@@ -143,7 +143,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <button onclick="window.location.href='update.php?id=<?= $rows['id'] ?>'"><i
+                                    <button onclick="window.location.href='update.php?id=<?= $rows['id']?>'"><i
                                             class="fa fa-pencil"></i>
                                     </button>
                                 </td>
@@ -170,7 +170,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Cerrar</button>
                                                     <!--Inserta el boton de borrar usuario-->
-                                                    <a href="php/delete.php?id=<?= $rows['id'] ?>" class="btn btn-danger">Borrar</a>
+                                                    <a href="delete.php?id=<?= $rows['id'] ?>&path=<?= $rows['file_url'] ?>" class="btn btn-danger">Borrar</a>
                                                 </div>
                                 </td>
                                 <td>
