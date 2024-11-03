@@ -70,7 +70,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </nav>
         <div class="container_logo">
         </div>
-    <div class="p-4 container">
+    <div class="p-4 container container-poliza">
         <div class="tbl_container">
             <h2>Listas de polizas</h2>
         <form action="list_poliza.php?nombre=<?php $nombre; ?>" method="GET">
@@ -83,21 +83,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     $nombre = $_POST['nombre'];} ?>
                 <div class="sel-search-first">
                     <span class="d-flex justify-content-center pb-2">Tipo:</span>
-                    <select id="select" class="form-control">
+                    <select id="select" class="form-control select-search">
                         <option value="6th">6Th</option>
                         <option value="7th">7Th</option>
                     </select>
                 </div>
                 <div>
                     <span class="d-flex justify-content-center pb-2">Fecha:</span>
-                    <select id="select" class="form-control">
+                    <select id="select" class="form-control select-search">
                         <option value="6th">6Th</option>
                         <option value="7th">7Th</option>
                     </select>
                 </div>
                 <div>
                     <span class="d-flex justify-content-center pb-2">Elaboro:</span>
-                    <select id="select" class="form-control">
+                    <select id="select" class="form-control select-search">
                         <option value="6th">6Th</option>
                         <option value="7th">7Th</option>
                     </select>
@@ -116,14 +116,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
             <?php } ?>
             <!-- Si detecta registros de usuarios nos mostrara la tabla -->
             <?php if (mysqli_num_rows($result)) { ?>
-                <table class="tbl">
+                <table class="tbl tbl-poliza">
                     <thead>
                         <tr class="text-center">
+                            <th scope="col">*</th>
                             <th scope="col">Folio</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Fecha</th>
-                            <th scope="col">Elaboro</th>
+                            <th scope="col">Elaboración</th>
                             <th colspan="3">Acciones</th>
                         </tr>
                     </thead>
@@ -136,11 +137,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                             ?>
                             <tr>
                                 <td><?= $i ?></td>
+                                <!--columna de folio-->
+                                <td><?= $rows['id'] ?></td>
                                 <!--columna de nombre-->
                                 <td><?= $rows['file_url'] ?></td>
-                                <!--columna de email-->
+                                <!--columna de tipo-->
                                 <td></td>
+                                <!--columna de fecha-->
                                 <td></td>
+                                <!--columna de elaboración-->
                                 <td></td>
                                 <td>
                                     <button onclick="window.location.href='update.php?id=<?= $rows['id']?>'"><i
@@ -180,10 +185,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                             </tr>
                         <?php } ?>
                         <tr>
-                            <td>001</td>
+                            <td>999</td>
+                            <td>CFBI90S-655</td>
+                            <td>Folio numero 999</td>
                             <td>Egreso</td>
                             <td>08/01/24</td>
-                            <td>GMAIL</td>
                             <td>GMAIL</td>
                             <td>
                                 <button><i class="fa fa-pencil"></i></button>
