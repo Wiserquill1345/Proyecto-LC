@@ -120,11 +120,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     <thead>
                         <tr class="text-center">
                             <th scope="col">*</th>
-                            <th scope="col">Folio</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Fecha</th>
-                            <th scope="col">Elaboración</th>
+                            <th scope="col">Concepto</th>
+                            <th scope="col">Elaboró</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Importe</th>
                             <th colspan="3">Acciones</th>
                         </tr>
                     </thead>
@@ -137,16 +139,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                             ?>
                             <tr>
                                 <td><?= $i ?></td>
-                                <!--columna de folio-->
-                                <td><?= $rows['id'] ?></td>
                                 <!--columna de nombre-->
-                                <td><?= $rows['file_url'] ?></td>
+                                <td><?= $rows['nombre'] ?></td>
                                 <!--columna de tipo-->
-                                <td></td>
+                                <td><?= $rows['tipo'] ?></td>
                                 <!--columna de fecha-->
-                                <td></td>
-                                <!--columna de elaboración-->
-                                <td></td>
+                                <td><?= $rows['fecha'] ?></td>
+                                <!--columna de concepto-->
+                                <td><?= $rows['concepto'] ?></td>
+                                <!--columna de elaboró-->
+                                <td><?= $rows['elaboro'] ?></td>
+                                <!--columna de estado-->
+                                <td><?= $rows['estado'] ?></td>
+                                <!--columna de importe-->
+                                <td>$<?= $rows['importe'] ?></td>
                                 <td>
                                     <button onclick="window.location.href='update.php?id=<?= $rows['id']?>'"><i
                                             class="fa fa-pencil"></i>
@@ -187,10 +193,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                         <tr>
                             <td>999</td>
                             <td>CFBI90S-655</td>
-                            <td>Folio numero 999</td>
-                            <td>Egreso</td>
-                            <td>08/01/24</td>
+                            <td>EGRESOS</td>
+                            <td>2024-09-20</td>
+                            <td>Revision numero 46</td>
                             <td>GMAIL</td>
+                            <td>VIGENTE</td>
+                            <td>$3200.00</td>
                             <td>
                                 <button><i class="fa fa-pencil"></i></button>
                             </td>

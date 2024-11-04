@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2024 at 03:07 PM
+-- Generation Time: Nov 04, 2024 at 02:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,6 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `concepto` text NOT NULL,
+  `elaboro` varchar(20) NOT NULL,
+  `estado` varchar(20) NOT NULL,
+  `importe` decimal(15,2) NOT NULL,
   `file_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -36,9 +43,8 @@ CREATE TABLE `files` (
 -- Dumping data for table `files`
 --
 
-INSERT INTO `files` (`id`, `file_url`) VALUES
-(2, 'Poliza-670f960a61f540.58599606.pdf'),
-(8, 'Poliza-67176385a46388.37939483.pdf');
+INSERT INTO `files` (`id`, `nombre`, `tipo`, `fecha`, `concepto`, `elaboro`, `estado`, `importe`, `file_url`) VALUES
+(1, 'Poliza de egreso', 'EGRESOS', '2024-08-01', 'Revision numero 24', 'GMAIL', 'VIGENTE', 3000.00, 'Poliza-67176385a46388.37939483.pdf');
 
 -- --------------------------------------------------------
 
@@ -86,7 +92,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
