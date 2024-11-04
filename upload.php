@@ -38,6 +38,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                 
             </ul>
         </nav>
+        
+
         <form action="upload_files.php" method="post" enctype="multipart/form-data">
             <div class="contenedor-main d-flex justify-content-center align-items-center flex-column">
             <?php if(isset($_GET['error'])): ?>

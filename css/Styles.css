@@ -284,8 +284,8 @@ th,td{
     justify-content: center;
     border: 2px dotted #ccc;
     max-width: 400px;
-    width:90%;
-    height: 300px;
+    width:40%;
+    height: 100px;
     flex-direction: column;
     border-radius: 10px;
     gap:25px;
@@ -295,7 +295,7 @@ th,td{
 }
 #uploadBtn{
     width:90%;
-    max-width: 200px;
+    max-width: 80px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -309,8 +309,8 @@ th,td{
     font-size: italic;
     color: #fff;
     background: rgb(228, 141, 12);
-    padding:10px;
-    margin-bottom: -65px;
+    padding:8px;
+    margin-bottom: -20px;
 }
 .contenedor-subir-archivos .drop-area.dragover{
     border-color: #4caf50;
@@ -468,6 +468,50 @@ form .correo{
 .btn-search{
     margin-bottom: 1px !important;
 }
+
+/*Estilos para el formulario de agregar poilizas*/
+.form-register{
+    width: 400px;
+    background: #24303C;
+    padding: 50px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.encabezado{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls{
+    width: 100%;
+    background: #24303C;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: white;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.form-register .botons:hover{
+    border: 1px solid orange !important;
+    transition: .1s;
+}
+
+
 
 @media (min-width: 720px) {
     .container-poliza{
