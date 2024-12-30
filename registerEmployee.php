@@ -1,3 +1,4 @@
+<!-- Pagina de registrar empleados (Se dejo por prevencion pero si no es necesario, borrar en la version final) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

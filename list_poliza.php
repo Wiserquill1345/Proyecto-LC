@@ -1,7 +1,15 @@
 <?php
+
+//Resume la sesion
 session_start();
+
+//Obtenemos la consulta de lectura de las polizas
 include "read_polizas.php";
-$nombre="";
+
+//Variable declarada para la filtracion de polizas
+$nombre = "";
+
+//Mostramos la pagina si el id y el correo coinciden
 if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     ?>
 
@@ -55,7 +63,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                     </ul>
                 </li>
                 <?php
-                if ($_SESSION['id'] == 5) {
+                if ($_SESSION['id'] == 1) {
                     ?>
                     <li><a href="">Control de usuarios</a>
                         <ul>
@@ -70,163 +78,184 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
         </nav>
         <div class="container_logo">
         </div>
-    <div class="p-4 container container-poliza">
-        <div class="tbl_container">
-            <h2>Listas de polizas</h2>
-        <form action="list_poliza.php?nombre=<?php $nombre; ?>" method="GET">
-            <div class="d-flex flex-row justify-content-between align-items-end">
-                <div>
-                    <input type="text" class="form-control mr-5 inp-search" name="nombre" id="nombre"
-                           placeholder="nombre" aria-label="nombre" aria-describedby="basic-addon2">
-                </div>
-                <?php if(isset($_POST['nombre'])){
-                    $nombre = $_POST['nombre'];} ?>
-                <div class="sel-search-first">
-                    <span class="d-flex justify-content-center pb-2">Tipo:</span>
-                    <select id="select" class="form-control select-search">
-                        <option value="6th">6Th</option>
-                        <option value="7th">7Th</option>
-                    </select>
-                </div>
-                <div>
-                    <span class="d-flex justify-content-center pb-2">Fecha:</span>
-                    <select id="select" class="form-control select-search">
-                        <option value="6th">6Th</option>
-                        <option value="7th">7Th</option>
-                    </select>
-                </div>
-                <div>
-                    <span class="d-flex justify-content-center pb-2">Elaboro:</span>
-                    <select id="select" class="form-control select-search">
-                        <option value="6th">6Th</option>
-                        <option value="7th">7Th</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-warning ml-5 btn-search" type="button">BUSCAR</button>
-                </div>    
-        </form>
-            
-            <hr>
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
-            <!-- Texto mostrado al completar con exito la operacion del control de usuario -->
-            <?php if (isset($_GET['exito'])) { ?>
-                <p class="exito"><?php echo $_GET['exito']; ?></p>
-            <?php } ?>
-            <!-- Si detecta registros de usuarios nos mostrara la tabla -->
-            <?php if (mysqli_num_rows($result)) { ?>
-                <table class="tbl tbl-poliza">
-                    <thead>
-                        <tr class="text-center">
-                            <th scope="col">*</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Concepto</th>
-                            <th scope="col">Elaboró</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Importe</th>
-                            <th colspan="3">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $i = 0;
-                        //Se realizan iteraciones de los registros mientras falten registros por mostrar
-                        while ($rows = mysqli_fetch_assoc($result)) {
-                            $i++;
-                            ?>
+        <!-- Contenedor de la poliza -->
+        <div class="p-4 container container-poliza">
+            <div class="tbl_container">
+                <h2>Listas de polizas</h2>
+
+                <!-- Formulario para el filtrado de polizas -->
+                <form action="list_poliza.php?nombre=<?php $nombre; ?>" method="GET">
+                    <div class="d-flex flex-row justify-content-between align-items-end">
+                        <div>
+                            <!-- Input para el nombre -->
+                            <input type="text" class="form-control mr-5 inp-search" name="nombre" id="nombre"
+                                placeholder="nombre" aria-label="nombre" aria-describedby="basic-addon2">
+                        </div>
+                        <?php if (isset($_POST['nombre'])) {
+                            $nombre = $_POST['nombre'];
+                        } ?>
+                        <!-- Select para el tipo de poliza -->
+                        <div class="sel-search-first">
+                            <span class="d-flex justify-content-center pb-2">Tipo:</span>
+                            <select id="select" class="form-control select-search">
+                                <option value="6th">6Th</option>
+                                <option value="7th">7Th</option>
+                            </select>
+                        </div>
+                        <!-- Select para la fecha de poliza -->
+                        <div>
+                            <span class="d-flex justify-content-center pb-2">Fecha:</span>
+                            <select id="select" class="form-control select-search">
+                                <option value="6th">6Th</option>
+                                <option value="7th">7Th</option>
+                            </select>
+                        </div>
+                        <!-- Select quien elaboro la poliza -->
+                        <div>
+                            <span class="d-flex justify-content-center pb-2">Elaboro:</span>
+                            <select id="select" class="form-control select-search">
+                                <option value="6th">6Th</option>
+                                <option value="7th">7Th</option>
+                            </select>
+                        </div>
+
+                        <!-- Boton para mandar la informacion del formulario a la consulta -->
+                        <button type="submit" class="btn btn-warning ml-5 btn-search" type="button">BUSCAR</button>
+                    </div>
+                </form>
+
+                <hr>
+                <!-- Nos muestra si hubo un error -->
+                <?php if (isset($_GET['error'])) { ?>
+                    <p class="error"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+                <!-- Texto mostrado al completar con exito la operacion -->
+                <?php if (isset($_GET['exito'])) { ?>
+                    <p class="exito"><?php echo $_GET['exito']; ?></p>
+                <?php } ?>
+                <!-- Si detecta registros de usuarios nos mostrara la tabla -->
+                <?php if (mysqli_num_rows($result)) { ?>
+                    <table class="tbl tbl-poliza">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">*</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Concepto</th>
+                                <th scope="col">Elaboró</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Importe</th>
+                                <th colspan="3">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $i = 0;
+                            //Se realizan iteraciones de los registros mientras falten registros por mostrar
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                $i++;
+                                ?>
+                                <tr>
+                                    <td><?= $i ?></td>
+                                    <!--columna de nombre-->
+                                    <td><?= $rows['nombre'] ?></td>
+                                    <!--columna de tipo-->
+                                    <td><?= $rows['tipo'] ?></td>
+                                    <!--columna de fecha-->
+                                    <td><?= $rows['fecha'] ?></td>
+                                    <!--columna de concepto-->
+                                    <td><?= $rows['concepto'] ?></td>
+                                    <!--columna de elaboró-->
+                                    <td><?= $rows['elaboro'] ?></td>
+                                    <!--columna de estado-->
+                                    <td><?= $rows['estado'] ?></td>
+                                    <!--columna de importe-->
+                                    <td>$<?= $rows['importe'] ?></td>
+                                    <!--columna del boton para actualizar -->
+                                    <td>
+                                        <button onclick="window.location.href='update.php?id=<?= $rows['id'] ?>'"><i
+                                                class="fa fa-pencil"></i>
+                                        </button>
+                                    </td>
+                                    <!--columna del boton para el boton de eliminar -->
+                                    <td>
+                                        <!-- Boton que abre un modal -->
+                                        <button type="button" data-toggle="modal" data-target="#modalEliminar<?= $rows['id'] ?>"><i
+                                                class="fa fa-trash"></i>
+                                        </button>
+
+                                        <!-- Modal del boton de eliminar -->
+                                        <div class="modal fade" id="modalEliminar<?= $rows['id'] ?>" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Eliminar archivo</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ¿Estas seguro de que quieres eliminar el archivo:
+                                                        "<span class="text-danger"><?= $rows['file_url'] ?></span>"?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cerrar</button>
+                                                        <!--boton de borrar poliza-->
+                                                        <a href="delete.php?id=<?= $rows['id'] ?>&path=<?= $rows['file_url'] ?>"
+                                                            class="btn btn-danger">Borrar</a>
+                                                    </div>
+                                    </td>
+                                    <!--columna del boton para mostrar la poliza -->
+                                    <td>
+                                        <button onclick="window.open('uploads/<?= $rows['file_url'] ?>','_blank')">
+                                            <i class="fa fa-print"></i></button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+
+                            <!-- Placeholder de un registro (eliminar en version final) -->
                             <tr>
-                                <td><?= $i ?></td>
-                                <!--columna de nombre-->
-                                <td><?= $rows['nombre'] ?></td>
-                                <!--columna de tipo-->
-                                <td><?= $rows['tipo'] ?></td>
-                                <!--columna de fecha-->
-                                <td><?= $rows['fecha'] ?></td>
-                                <!--columna de concepto-->
-                                <td><?= $rows['concepto'] ?></td>
-                                <!--columna de elaboró-->
-                                <td><?= $rows['elaboro'] ?></td>
-                                <!--columna de estado-->
-                                <td><?= $rows['estado'] ?></td>
-                                <!--columna de importe-->
-                                <td>$<?= $rows['importe'] ?></td>
+                                <td>999</td>
+                                <td>CFBI90S-655</td>
+                                <td>EGRESOS</td>
+                                <td>2024-09-20</td>
+                                <td>Revision numero 46</td>
+                                <td>GMAIL</td>
+                                <td>VIGENTE</td>
+                                <td>$3200.00</td>
                                 <td>
-                                    <button onclick="window.location.href='update.php?id=<?= $rows['id']?>'"><i
-                                            class="fa fa-pencil"></i>
-                                    </button>
+                                    <button><i class="fa fa-pencil"></i></button>
                                 </td>
                                 <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" data-toggle="modal" data-target="#modalEliminar<?= $rows['id'] ?>"><i
-                                            class="fa fa-trash"></i>
-                                    </button>
-                                    <div class="modal fade" id="modalEliminar<?= $rows['id'] ?>" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Eliminar archivo</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ¿Estas seguro de que quieres eliminar el archivo:
-                                                    "<span class="text-danger"><?= $rows['file_url'] ?></span>"?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cerrar</button>
-                                                    <!--Inserta el boton de borrar usuario-->
-                                                    <a href="delete.php?id=<?= $rows['id'] ?>&path=<?= $rows['file_url'] ?>" class="btn btn-danger">Borrar</a>
-                                                </div>
+                                    <button><i class="fa fa-trash"></i></button>
                                 </td>
                                 <td>
-                                    <button onclick="window.open('uploads/<?= $rows['file_url'] ?>','_blank')">
-                                        <i class="fa fa-print"></i></button>
+                                    <button><i class="fa fa-print"></i></button>
                                 </td>
                             </tr>
-                        <?php } ?>
-                        <tr>
-                            <td>999</td>
-                            <td>CFBI90S-655</td>
-                            <td>EGRESOS</td>
-                            <td>2024-09-20</td>
-                            <td>Revision numero 46</td>
-                            <td>GMAIL</td>
-                            <td>VIGENTE</td>
-                            <td>$3200.00</td>
-                            <td>
-                                <button><i class="fa fa-pencil"></i></button>
-                            </td>
-                            <td>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                            <td>
-                                <button><i class="fa fa-print"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            <?php }else{
+                        </tbody>
+                    </table>
+                
+                <!--Si no se encuentran registros mandar un mensaje -->
+                <?php } else {
 
-            ?>
-            <h3 class="text-center">No se encuentran archivos</h3>
-            <?php }
-            
-            ?>
+                    ?>
+                    <h3 class="text-center">No se encuentran archivos</h3>
+                <?php }
+
+                ?>
+            </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.js">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js">
-    </script>
+        <!-- Scripts para el modal -->
+        <script src="https://code.jquery.com/jquery-3.1.1.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js">
+        </script>
     </body>
-
-    </html>
+</html>
 
     <?php
 } else {

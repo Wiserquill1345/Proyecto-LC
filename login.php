@@ -45,7 +45,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['name'] = $row['nombre'];
                 $_SESSION['id'] = $row['id'];
-                //mandamos al usuario al home pagea
+                //mandamos al usuario al home page
                 header("Location: home.php");
                 exit();
             }
